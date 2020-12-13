@@ -1,0 +1,13 @@
+{
+  "name": "vendor_name/trelloLite.loc",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nikolay",
+      "email": "kolian19971@ukr.net"
+    }
+  ],
+  "require": {
+    "requtize/query-builder": "dev-master"
+  }
+}

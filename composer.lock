@@ -1,0 +1,68 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "167125d2428c5a9e1bed9ebe7cebd3aa",
+    "packages": [
+        {
+            "name": "requtize/query-builder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/requtize/query-builder.git",
+                "reference": "c9193ea08cf7aa33ed10f91d3ba442fa20c73f76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/requtize/query-builder/zipball/c9193ea08cf7aa33ed10f91d3ba442fa20c73f76",
+                "reference": "c9193ea08cf7aa33ed10f91d3ba442fa20c73f76",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~5.5 || ^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.4",
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Requtize\\QueryBuilder\\": "src/QueryBuilder/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Banaszkiewicz",
+                    "homepage": "http://adambanaszkiewicz.pl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fast, simple and dependency-free query builder for PHP.",
+            "homepage": "https://github.com/requtize/query-builder",
+            "keywords": [
+                "database",
+                "query builder",
+                "sql"
+            ],
+            "time": "2019-01-06T14:25:24+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "requtize/query-builder": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}
