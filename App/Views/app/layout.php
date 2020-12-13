@@ -17,7 +17,8 @@
 
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,9 +31,26 @@
         </ul>
         <div class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link authModal" href="#">Авторизация</a>
-                </li>
+
+                <?php if(!isset($data['admin'])){ ?>
+
+                    <li class="nav-item">
+                        <a class="nav-link authModal" href="#">Авторизация</a>
+                    </li>
+
+                <?php }else{ ?>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?php echo $data['admin']->login; ?>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/home/logout">Выход</a>
+                        </div>
+                    </li>
+
+                <?php } ?>
+
             </ul>
         </div>
     </div>
@@ -46,6 +64,35 @@
     ?>
 
 </main><!-- /.container -->
+
+<!-- Auth Modal -->
+<div class="modal fade" id="authModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Авторизация</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm" method="post" action="/home/auth">
+                    <div class="form-group">
+                        <label for="login" class="col-form-label">Логин:</label>
+                        <input required type="text" class="form-control" id="login" name="login">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-form-label">Пароль:</label>
+                        <input required type="password" class="form-control" id="password" name="password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" form="authForm" class="btn btn-primary" value="Войти">
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

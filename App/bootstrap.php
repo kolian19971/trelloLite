@@ -1,9 +1,5 @@
 <?php
 
-use Requtize\QueryBuilder\Connection;
-use Requtize\QueryBuilder\QueryBuilder\QueryBuilderFactory;
-use Requtize\QueryBuilder\ConnectionAdapters\PdoBridge;
-
 /*
  * Environment variable
  */
@@ -20,18 +16,6 @@ if(!function_exists('env')) {
         return $value;
     }
 }
-
-/*
- * New PDO connection
- */
-$dsn =  env('DB_CONNECTION').':host='.env('DB_HOST').';dbname='.env('DB_DATABASE').';port='.env('DB_PORT');
-$pdo = new PDO($dsn, env('DB_USERNAME'), env('DB_PASSWORD'));
-
-// Build Connection object with PdoBridge ad Adapter
-$conn = new Connection(new PdoBridge($pdo));
-
-// Pass this connection to Factory
-$qbf = new QueryBuilderFactory($conn);
 
 /**
  * Loading base classes and models
